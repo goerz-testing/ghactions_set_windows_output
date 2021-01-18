@@ -31,9 +31,11 @@ jobs:
         id: python_shell
         shell: python
         run: |
-          import sys   
+          import sys
           print(sys.version)
+          print("::set-output name=out::%s" % sys.version)
 
       - name: Print results
         run: |
           echo "${{ steps.default_shell.outputs.out }}"
+          echo "${{ steps.python_shell.outputs.out }}"
