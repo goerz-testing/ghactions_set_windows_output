@@ -25,7 +25,7 @@ jobs:
 
       - name: Set output in default shell
         id: default_shell
-        run: echo "::set-output name=out::$(python -c 'print(\"HELLO\")')"
+        run: echo "::set-output name=out::$(python -c 'print(""HELLO"")')"
 
       - name: Run an action using a python shell
         id: python_shell
