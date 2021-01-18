@@ -27,6 +27,13 @@ jobs:
         id: default_shell
         run: echo "::set-output name=out::$(python -c 'print(\"HELLO\")')"
 
+      - name: Run an action using a python shell
+        id: python_shell
+        shell: python
+        run: |
+          import sys   
+          print(sys.version)
+
       - name: Print results
         run: |
           echo "${{ steps.default_shell.outputs.out }}"
